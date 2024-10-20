@@ -1,0 +1,36 @@
+nav {
+    display: flex;
+}
+
+nav>a {
+    border: 1px solid;
+    border-color: black;
+    color: currentColor;
+    text-decoration: none;
+    padding: 5px;
+    padding-left: 15px;
+    padding-right: 15px;
+    margin: 0px;
+}
+
+#main-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+.logo {
+    height: 50px;
+    width: 50px;
+    background-position: center;
+    background-size: cover;
+    border-radius: 50%;
+    background-image: url(../assets/logo.jpg);
+    border: 1px solid;
+}
+
+.photo-banner {
+    border: 1px solid;
+    height: 420px;
+    background-position: top;
+    background-size: cover;
+}
