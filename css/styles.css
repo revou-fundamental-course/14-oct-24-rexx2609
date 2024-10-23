@@ -1,79 +1,247 @@
-@media only screen and (max-width: 600px) {
-    #main-header {
-        flex-direction: column;
-    }
-    .navi {
-        flex-direction: column;
-    }
-    div>nav>button {
-        width: 100%;
-        padding-right: -20px;
-    }
-    .logo {
-        margin-bottom: 15px;
-    }
+body {
+    font-family: sans-serif;    
+    padding-top: 70px;
 }
 
 head {
-    font-family: Arial, Helvetica, sans-serif;
+    font-family: sans-serif;
 }
 
-.navi {
-    display: flex;
+.rex {
+    padding: 0 100px;
 }
 
-nav>button {
-    border: 1px solid;
-    border-color: black;
-    color: currentColor;
-    text-decoration: none;
-    padding: 5px;
-    padding-left: 15px;
-    padding-right: 15px;
-    margin: 0px;
-}
-
+/* Header Styles */
 #main-header {
     display: flex;
+    flex-wrap: wrap; 
     justify-content: space-between;
     align-items: center;
+    position: fixed; 
+    top: 0;          
+    left: 0;         
+    right: 0;        
+    background-color: #dddddd; 
+    z-index: 1000;  
+    padding: 20px 35px 20px; 
+    transition: transform 0.3s ease; 
+    border-bottom: 2px solid;
+    border-color: grey;
 }
+
+.hidden {
+    transform: translateY(-100%); 
+}
+
+#profile,
+#visi-misi,
+#message-us {
+    text-align: center;
+}
+
+/* Navigation Styles */
+.navi {
+    display: flex;
+    flex-direction: column; 
+}
+
+nav {
+    display: flex;
+    flex-wrap: wrap; 
+}
+
+nav > a {
+    border: 1px solid rgb(102, 100, 100);
+    color: currentColor;
+    text-decoration: none;
+    padding: 5px 15px; 
+    background-color: #bbb;
+    margin: 5px 0; 
+}
+
+hr {
+    display: none;
+}
+
+/* Logo Styles */
 .logo {
-    height: 50px;
-    width: 50px;
+    height: 60px;
+    width: 60px;
     background-position: center;
     background-size: cover;
+    border-radius: 15%;
+    background-image: url(../assets/logo.png);
+}
+
+/* Section Styles */
+section {
+    padding: 10px; 
+}
+
+/* Slideshow container */
+.slideshow-container {
+    position: relative;
+    max-width: 100%;
+    margin: auto;
+    border-radius: 15%;
+    display: flex;
+    justify-content: center;
+}
+
+/* Hide the images by default */
+.mySlides {
+    display: none;
+}
+
+/* Fading animation */
+.fade {
+    animation-name: fade;
+    animation-duration: 1.5s;
+}
+
+@keyframes fade {
+    from {opacity: .4}
+    to {opacity: 1}
+}
+
+/* Next & previous buttons */
+.prev, .next {
+    cursor: pointer;
+    position: absolute;
+    top: 50%;
+    width: auto;
+    padding: 16px;
+    margin-top: -22px;
+    color: white;
+    font-weight: bold;
+    font-size: 18px;
+    transition: 0.6s ease;
+    border-radius: 0 3px 3px 0;
+    user-select: none;
+}
+
+.next {
+    right: 56px;
+    border-radius: 3px 0 0 3px;
+}
+
+.prev {
+    left: 56px;
+    border-radius: 3px 0 0 3px;
+}
+
+/* Dots/bullets */
+.dot {
+    cursor: pointer;
+    height: 15px;
+    width: 15px;
+    margin: 0 2px;
+    background-color: #bbb;
     border-radius: 50%;
-    background-image: url(../assets/logo.jpg);
-    border: 1px solid;
+    display: inline-block;
+    transition: background-color 0.5s ease;
 }
 
-body {
-    font-family: Arial, Helvetica, sans-serif;    
-}
-header {
-    padding-left: 20px;
+.active, .dot:hover {
+    background-color: #717171;
 }
 
-article {
-    padding-left: 20px;
+.prev:hover, .next:hover {
+    background-color: rgba(0,0,0,0.8);
 }
+
+
+/* Container Styles */
 .container {
     display: flex;
-    justify-content: space-between;
-    width: 100%;
+    justify-content: space-between; 
     padding: 5px;
 }
 
+/* photo banner */
+.gambar {
+    border-radius: 5%;
+    height: 550px;
+    width: 1000px;
+}
+ /* profile */
+.info-profile {
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+}
+
+.isi-profile {
+    width: 50%;
+}
+
+.isi-profile2 {
+    width: 50%;
+    display: flex;
+    justify-content: flex-start;
+}
+
+.kelompok {
+    width: 500px;
+    align-items: center;
+    border-radius: 10%;
+    border: 2px solid;
+}
+
+/* visi-misi */
+
+.info-visi-misi {
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: nowrap;
+}
+
+.visi {
+    background-color: #717171;
+    width: 45%;
+    border: 1px solid;
+    align-items: center;
+}
+
+.vision {
+    text-align: center;
+}
+
+#ini-visi {
+    display: flex;
+    text-align: center;
+    padding: 0 140px;
+    margin: 30px 0;
+}
+
+.misi {
+    background-color: #717171;
+    width: 45%;
+    border: 1px solid;
+}
+
+.mision {
+    text-align: center;
+}
+
+.mision>ul {
+    text-align: left;
+    display: flex;
+    flex-direction: column;
+}
+
+/* Form Styles */
 form {
     display: flex;
     flex-direction: column;
-    width: 45%;
-    padding-left: 20px;
+    width: 45%; 
+    padding: 10px; 
     border-radius: 8px;
 }
 
-input[type="text"], input[type="date"], textarea {
+input[type="text"],
+input[type="date"],
+textarea {
     margin-bottom: 15px;
     padding: 8px;
     width: 95%;
@@ -81,23 +249,25 @@ input[type="text"], input[type="date"], textarea {
     border-radius: 4px;
 }
 
+/* Gender Styles */
 .the-gender {
     display: flex;
     align-items: center;
 }
 
+/* Output Box Styles */
 .output-box {
-    width: 45%;
-    padding-left: 20px;
+    width: 45%; 
+    padding: 10px; 
     border: 1px solid #ccc;
     border-radius: 8px;
 }
 
+/* Button Styles */
 button {
     background-color: #ddd;
     cursor: pointer;
-    border: 1px solid;
-    border-color: black;
+    border: 1px solid black;
     padding: 5px;
 }
 
@@ -105,9 +275,149 @@ button:hover {
     background-color: #bbb;
 }
 
+/* Footer Styles */
 footer {
     text-align: center;
     font-family: Arial, Helvetica, sans-serif;
     font-size: x-small;
     padding: 10px;
+    background-color: #dddddd;
+    margin-left: -0.7vw;
+    margin-right: -0.7vw;
+    margin-bottom: -0.7vw;
+    border-top: 2px solid;
+    border-color: grey;
+}
+
+/* Media Queries for Mobile Responsiveness */
+@media (max-width: 680px) {
+    .rex {
+        padding: 0 0;
+    }
+
+    .menu-toggle {
+        display: none; 
+    }
+
+    #smartphone {
+        background-color: #dddddd;
+        padding: 1px 0px 1px;
+        display: flex;
+        border-color: #dddddd;
+        border: 2px;
+    }
+
+
+    nav {
+        display: flex; 
+        flex-direction: row; 
+    }
+
+    nav > a {
+        border: 1px solid black;
+        color: currentColor;
+        text-decoration: none;
+        padding: 5px 15px; 
+        background-color: #bbb;
+        margin: 5px 0; 
+    }
+
+    form,
+    .output-box {
+        width: 100%;
+    }
+
+    .container {
+        justify-content: none;
+        flex-direction: column;
+    }
+
+    .gambar {
+        width: 100%;
+        height: 100%;
+    }
+
+    .next {
+        right: 0;
+    }
+
+    .prev {
+        left: 0;
+    }
+
+    .info-profile {
+        flex-direction: column;
+    }
+
+    .isi-profile {
+        width: auto;
+    }    
+
+    .isi-profile2 {
+        flex-direction: column;
+        justify-content: center;
+    }
+
+    .kelompok {
+        width: 350px;
+        height: 250px;
+    }
+
+    .info-visi-misi {
+        flex-direction: column;
+    }
+
+    .visi {
+        width: auto;
+    }
+
+    #ini-visi {
+        padding: 0 50px;
+    }
+
+    .misi {
+        width: auto;
+    }
+}
+
+@media (max-width: 400px) {
+    .navi {
+        width: 100%;
+    }
+
+    nav {
+        flex-direction: column;
+        align-items: center;
+        background-color: #bbb;
+        padding: 5px 0;
+    }
+
+    nav > a {
+        display: block;
+        width: 90%;
+        text-align: center;
+        padding: 8px 0;
+        margin: 5px 0;
+        background-color: #bbb;
+        border-radius: 4px;
+    }
+
+    .logo {
+        margin: 0 auto 10px;
+        width: 40px;
+        height: 40px;
+    }
+
+    .gambar {
+        width: 100%;
+        height: 260px;
+    }
+
+    .prev {
+        left: 0;
+    }
+
+    .next {
+        right: 0;
+    }
 }

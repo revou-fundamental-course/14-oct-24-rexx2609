@@ -6,63 +6,112 @@
         <title>My Website</title>
         <link rel="stylesheet" href="css\styles.css">
     </head>
-    <main>
-        <header id="main-header">
+    <main class="rex">
+        <header id="main-header" class="hidden">
             <!--Logo-->
             <div class="logo">
-                <img src="">
-                <img src="">
-                <img src="">
             </div>
             <!--Navigasi-->
-            <div class="navi">
+            <navbar class="navi">
                 <nav>
-                    <button href="#home">Home</button>
-                    <button href="#profile">Our Profile</button>
-                    <button href="#portofolio">Portofolio</button>
-                    <button href="#message-us">Message Us</button>
+                    <a href="#home">Home</a>
+                    <a href="#profile">Our Profile</a>
+                    <a href="#visi-misi">Visi & Misi</a>
+                    <a href="#message-us">Message Us</a>
                 </nav>
-            </div>
+            </navbar>
         </header>
-        <hr>
+        <hr id="smartphone">
 
         <!--Section Home-->
-        <section>
-            <header class=>
-                <h1 id="home">Hi <span id="name">rx</span>, Welcome to my website</h1>
+        <section >
+            <header>
+                <h1 id="home">Hi <span id="name">rx</span>, Selamat Datang di KotaSatu Properti</h1>
             </header>
             <article>
-                <p>ini adalah website latihan pertama</p>
-
-                <!--photo banner-->
-                <div class="photo-banner"> </div>
+                <p>solusi terpercaya untuk kebutuhan properti Anda. Temukan rumah, apartemen, atau investasi properti terbaik dengan layanan profesional kami. Jelajahi portofolio kami dan wujudkan hunian impian bersama Kotasatu Properti.</p>
+        
+                <!-- Photo Banner with Slideshow -->
+                <div class="slideshow-container">
+                    <div class="mySlides fade">
+                        <img src="assets/bangunan 1.jpg" alt="Bangunan 1" class="gambar">
+                    </div>
+                    <div class="mySlides fade">
+                        <img src="assets/bangunan 2.jpeg" alt="Bangunan 2" class="gambar">
+                    </div>
+                    <div class="mySlides fade">
+                        <img src="assets/bangunan 3.jpg" alt="Bangunan 3" class="gambar">
+                    </div>
+        
+                    <!-- Navigation buttons -->
+                    <a class="prev" onclick="plusSlides(-1)">&#10094;</a>
+                    <a class="next" onclick="plusSlides(1)">&#10095;</a>
+                </div>
+                <br>
+        
+                <!-- Dots for each slide -->
+                <div style="text-align:center">
+                    <span class="dot" onclick="currentSlide(1)"></span>
+                    <span class="dot" onclick="currentSlide(2)"></span>
+                    <span class="dot" onclick="currentSlide(3)"></span>
+                </div>
             </article>
         </section>
-        <hr>
-        <!--Section Profile-->
+        <hr id="smartphone">
+         <!--Section Profile-->
         <section>
             <header>
-                <h1 id="profile">Profile</h1>
+                <h1 id="profile"> Our Profile</h1>
             </header>
-            <article>
-
+            <article class="info-profile">
+                <!--foto anggota perusahaan-->
+                <div class="isi-profile2">
+                    <img src="assets\tim.jpg" alt="tim" class="kelompok">
+                </div>
+                <!--isi dari profile-->
+                <div class="isi-profile">
+                    <h2>KotaSatu</h2>
+                    <p><b>PT Kota Satu Properti Tbk</b> adalah perusahaan yang didirikan pada 3 Oktober 2012 di Kabupaten Semarang, dengan pengesahan dari Menteri 
+                        Hukum dan Hak Asasi Manusia pada 19 November 2012. Perusahaan ini melaksanakan IPO di Bursa Efek Indonesia pada 5 November 2018 
+                        dengan menerbitkan 500 juta saham bernilai nominal Rp 117,- per lembar.</p>
+                    <p>PT Kota Satu Properti Tbk berperan sebagai induk perusahaan dari anak-anak perusahaannya yang dimiliki melalui penyertaan saham. 
+                        Kegiatan utama perusahaan meliputi pembangunan, pengelolaan, dan perdagangan real estate/properti, yang saling terkait antara perusahaan induk dan entitas anak.</p>
+                </div>
             </article>
         </section>
-        <hr>
-        <!--Section Portofolio-->
+        <hr id="smartphone">
+        <!--Section visi-misi-->
         <section>
             <header>
-            <h1 id="portofolio">Portofolio</h1>
+            <h1 id="visi-misi">Visi & Misi</h1>
             </header>
+            <article class="info-visi-misi">
+                <div class="visi">
+                    <!--visi-->
+                    <h2 class="vision">VISION</h2>
+                    <h1 id="ini-visi">Become The Most Trusted Company in Providing Quality Living Space and Lifestyle</h1>
+                </div>
+                <br>
+                <div class="misi">
+                    <!--misi-->
+                    <h2 class="mision">MISION</h2>
+                    <ul>
+                        <li>Maximize return and benefit for shareholders and stake holders.</li>
+                        <li>Provide solution in property, hospitality and lifestyle industry by implementing best practice management system, innovation and technology.</li>
+                        <li>Develop advance human capital through strategic people development programs.</li>
+                        <li>Develop sustainable business by forming strategic alliances with trusted partners</li>
+                    </ul>
+                </div>
+            </article>
         </section>
-        <hr>
+        <hr id="smartphone">
         <!--Section Message-->
         <section>
             <header>
             <h1 id="message-us">Message Us</h1>
             </header>
             <div class="container">
-                <form name="message-form" onsubmit="return validateForm">
+                <form name="message-form" onsubmit="return validateForm()">
                     Nama: 
                     <input placeholder="nama" type="text" name="full-name"/>
                     <br/>
@@ -82,9 +131,10 @@
                     <textarea placeholder="Pesan" name="messages"></textarea>
                     <br/>
 
-                    <button type="submit" value="submit">Submit</button>
+                    <button type="submit" id="submit-button">Submit</button>
                 </form>
                 <div class="output-box">
+                    <p><span id="sender-time"></span></p>
                     <p>Nama: <span id="sender-full-name"></span></p>
                     <p>Tanggal Lahir: <span id="sender-birth-date"></span></p>
                     <p>Jenis Kelamin: <span id="sender-gender"></span></p>
@@ -92,11 +142,10 @@
                 </div>
             </div>
         </section>
-        <hr>
         <script src="js\script.js"></script>
     </main>
             <!--Copyright-->
     <footer>
-        <p>Reza &copy;2024</p>
+        <p>&copy;2024 - KotaSatu</p>
     </footer>
 </html>
